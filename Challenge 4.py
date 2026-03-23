@@ -71,8 +71,8 @@ if __name__ == "__main__":
     )
 
     # Save books
-    db.save_book(Book("Python Basics", "John Smith", "1111"))
-    db.save_book(Ebook("AI Guide", "Jane Doe", "2222", "PDF"))
+    db.save_book(Book("Python Basics", "John Smith", "1111")) #"The handy philosophy answer book", " Naomi Zack"
+    db.save_book(Ebook("AI Guide", "Jane Doe", "2222", "PDF")) #"The Mountain Is You", "Brianna Wiest", 20
 
     print("Books from Database:\n")
 
