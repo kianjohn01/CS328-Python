@@ -1,6 +1,6 @@
 import mysql.connector
 
-# Book class
+
 class Book:
     def __init__(self, title, author, isbn):
         self.title = title
@@ -11,7 +11,7 @@ class Book:
         return f"Book: {self.title} by {self.author} (ISBN: {self.isbn})"
 
 
-# Ebook class
+
 class Ebook(Book):
     def __init__(self, title, author, isbn, file_format):
         super().__init__(title, author, isbn)
@@ -21,7 +21,7 @@ class Ebook(Book):
         return f"Ebook: {self.title} by {self.author} (ISBN: {self.isbn}, Format: {self.file_format})"
 
 
-# Database Manager
+
 class DatabaseManager:
     def __init__(self, host, user, password, database):
         self.connection = mysql.connector.connect(
@@ -61,7 +61,7 @@ class DatabaseManager:
         self.connection.close()
 
 
-# ===== TESTING =====
+
 if __name__ == "__main__":
     db = DatabaseManager(
         host="localhost",
@@ -70,13 +70,13 @@ if __name__ == "__main__":
         database="library_db"
     )
 
-    # Save books
+
     db.save_book(Book("Python Basics", "John Smith", "1111")) #"The handy philosophy answer book", " Naomi Zack"
     db.save_book(Ebook("AI Guide", "Jane Doe", "2222", "PDF")) #"The Mountain Is You", "Brianna Wiest", 20
 
     print("Books from Database:\n")
 
-    # Load and display books
+ 
     books = db.load_books()
     for book in books:
         print(book)
